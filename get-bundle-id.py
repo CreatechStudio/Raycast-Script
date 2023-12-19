@@ -5,6 +5,7 @@
 # @raycast.title Get Bundle ID
 # @raycast.mode inline
 # @raycast.packageName get-bundle-id
+# @raycast.refreshTime 3s
 
 # Optional parameters:
 # @raycast.icon images/appstore-icon.png
@@ -55,7 +56,6 @@ def save_bundle_id_from_app_store_link():
                 copy_to_clipboard(bundle_id)
                 print(f"已复制 {bundle_id} 已复制到剪贴板")
             else:
-                print("在中国区域未能获取 bundleId，尝试其他区域。")
                 json_data = fetch_data(app_id, 'us')
                 bundle_id = extract_bundle_id(json_data)
 
