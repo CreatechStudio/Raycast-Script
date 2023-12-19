@@ -19,6 +19,19 @@ import subprocess
 import sys
 import pyperclip
 
+# 安装依赖
+import importlib
+import pip
+depends = [
+    ('requests', 'requests'),
+    ('pyperclip', 'PaperClip')
+]
+for pack_name, imp_name in depends:
+    try:
+        importlib.import_module(imp_name)
+    except:
+        pip.main(['install', pack_name])
+
 def extract_app_id(url):
     pattern = r'id(\d+)'
     match = re.search(pattern, url)
