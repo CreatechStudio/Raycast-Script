@@ -13,12 +13,6 @@
 # Documentation:
 # @raycast.description Get Bundle ID
 
-import requests
-import re
-import subprocess
-import sys
-import pyperclip
-
 # 安装依赖
 import importlib
 import pip
@@ -31,6 +25,14 @@ for pack_name, imp_name in depends:
         importlib.import_module(imp_name)
     except:
         pip.main(['install', pack_name])
+
+
+import requests
+import re
+import subprocess
+import sys
+import pyperclip
+
 
 def extract_app_id(url):
     pattern = r'id(\d+)'
