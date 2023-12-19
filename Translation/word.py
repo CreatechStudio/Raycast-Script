@@ -65,7 +65,7 @@ def youdao_translate(word: str):
                     else:
                         tran = translation['#text']
 
-                    print(tran, f'{pos} {types} - 有道', arg=tran)
+                    print(tran, f'{pos} {types} - 有道')
 
                     cache[word].append({"translation": tran, "type": pos, "source": types})
 
@@ -75,7 +75,7 @@ def youdao_translate(word: str):
 
         if 'translateResult' in result.keys():
             translation = result['translateResult'][0][0]['tgt']
-            print(translation, subtitle='有道', arg=translation)
+            print(f'{translation} - 有道')
 
     else:
         print(f"有道未查找到单词 '{word}'")
@@ -97,9 +97,7 @@ def find_word(words_path, words_list, come_from, need_err=True):
                             t = trans['type'] + ('' if trans['type'].strip()[-1] == '.' else '.') + '  '
                         else:
                             t = ''
-                        print(
-                            f"{word}: {trans['translation'].strip()} - {t + trans['source']} - {come_from}"
-                        )
+                        print(f"{word}: {trans['translation'].strip()} - {t + trans['source']} - {come_from}")
                 else:
                     if need_err:
                         print(f"{come_from}未查找到单词 '{word}'")
@@ -127,4 +125,5 @@ if __name__ == '__main__':
     except IndexError:
         print("无法正常获得提供的参数")
     else:
+        print("查找中...", end="\r")
         main(words)
