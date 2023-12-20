@@ -108,6 +108,9 @@ def find_word(words_path, words_list, come_from, need_err=True):
 
 
 def main(words):
+    if not os.path.exists('youdao.json'):
+        with open('youdao.json', 'w') as f:
+            f.write(json.dumps({}))
     flag = True
     words_list = words.strip().split(' ')
     if len(words_list) == 1:
