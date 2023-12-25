@@ -25,7 +25,7 @@ for pack_name, imp_name in depends:
     try:
         importlib.import_module(imp_name)
     except:
-        subprocess.run(f'/usr/bin/env python3 -m pip install {pack_name}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.run(f'/usr/bin/env python3 -m pip install {pack_name}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, wait=True)
 
 
 import requests

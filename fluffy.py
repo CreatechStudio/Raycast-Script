@@ -14,7 +14,6 @@
 # @raycast.description Usage: fluffy <install/start/stop/update/uninstall>
 
 import importlib
-import pip
 depends = [
     ('psutil', 'psutil'),
     ('requests', 'requests')
@@ -23,7 +22,7 @@ for pack_name, imp_name in depends:
     try:
         importlib.import_module(imp_name)
     except:
-        pip.main(['install', pack_name])
+        subprocess.run(f'/usr/bin/env python3 -m pip install {pack_name}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, wait=True)
 
 import sys
 
