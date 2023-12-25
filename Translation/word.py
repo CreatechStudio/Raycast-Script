@@ -4,7 +4,6 @@
 # @raycast.schemaVersion 1
 # @raycast.title Word Translation
 # @raycast.mode fullOutput
-# @raycast.packageName word-translation
 
 # Optional parameters:
 # @raycast.icon images/trans-icon.png
@@ -12,10 +11,12 @@
 
 # Documentation:
 # @raycast.description Word Translate
+# @raycast.author Iewnfod, CreatechStudio Shanghai Inc.
+# @raycast.authorURL https://github.com/createchstudio
 
 # 安装依赖
 import importlib
-import pip
+import subprocess
 depends = [
     ('requests', 'requests'),
     ('pycryptodome', 'Crypto')
@@ -24,7 +25,8 @@ for pack_name, imp_name in depends:
     try:
         importlib.import_module(imp_name)
     except:
-        pip.main(['install', pack_name])
+        p = subprocess.Popen(f'/usr/bin/env python3 -m pip install {pack_name}', stdout=subprocess.PIPE, shell=True)
+        p.wait()
 
 
 import json

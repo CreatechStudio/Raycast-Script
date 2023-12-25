@@ -4,7 +4,6 @@
 # @raycast.schemaVersion 1
 # @raycast.title Base Converter
 # @raycast.mode compact
-# @raycast.packageName com.createchstudio.raycast.base-converter
 
 # Optional parameters:
 # @raycast.icon ♻️
@@ -14,6 +13,8 @@
 
 # Documentation:
 # @raycast.description Usage: base <original base> <target base> <number>
+# @raycast.author Iewnfod, CreatechStudio Shanghai Inc.
+# @raycast.authorURL https://github.com/createchstudio
 
 import sys
 

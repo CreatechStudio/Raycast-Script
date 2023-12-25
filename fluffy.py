@@ -4,7 +4,6 @@
 # @raycast.schemaVersion 1
 # @raycast.title Fluffy Launcher
 # @raycast.mode silent
-# @raycast.packageName com.createchstudio.raycast.fluffy-launcher
 
 # Optional parameters:
 # @raycast.icon images/fluffy-icon.png

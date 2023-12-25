@@ -4,7 +4,6 @@
 # @raycast.schemaVersion 1
 # @raycast.title Get Bundle ID
 # @raycast.mode inline
-# @raycast.packageName com.createchstudio.raycast.get-bundle-id
 # @raycast.refreshTime 3s
 
 # Optional parameters:
@@ -12,6 +11,8 @@
 
 # Documentation:
 # @raycast.description Get Bundle ID
+# @raycast.author CreatechStudio Shanghai Inc.
+# @raycast.authorURL https://github.com/createchstudio
 
 # 安装依赖
 import importlib
