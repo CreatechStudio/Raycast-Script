@@ -78,7 +78,7 @@ def run_fluffy_background():
     try:
         for proc in psutil.process_iter(['name']):
             if 'fluffy' in proc.info['name']:
-                print("🚀 Fluffy process already running!")
+                print("❓ Fluffy process already running!")
                 return
 
         process = subprocess.Popen(['./fluffy/fluffy'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
