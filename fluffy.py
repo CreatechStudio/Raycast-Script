@@ -72,37 +72,25 @@ def download_fluffy():
     save_version_to_file(latest_version)
     os.system('wget -O fluffy/fluffy https://github.com/iewnfod/fluffy/releases/latest/download/fluffy')
 
-    shell = os.getenv('SHELL')
-
-    if shell.endswith('bash'):
-        os.system(f'echo \'\' >> ~/.bashrc')
-        os.system(f'echo \'#Fluffy in Raycast Shell Script\' >> ~/.bashrc')
-        os.system(f'echo \'export PATH="$PATH:{os.getcwd()}/fluffy"\' >> ~/.bashrc')
-    elif shell.endswith('zsh'):
-        os.system(f'echo \'\' >> ~/.zshrc')
-        os.system(f'echo \'#Fluffy in Raycast Shell Script\' >> ~/.zshrc')
-        os.system(f'echo \'export PATH="$PATH:{os.getcwd()}/fluffy"\' >> ~/.zshrc')
-    elif 'fish' in shell:
-        os.system(f'echo \'\' >> ~/.config/fish/config.fish')
-        os.system(f'echo \'#Fluffy in Raycast Shell Script\' >> ~/.config/fish/config.fish')
-        os.system(f'echo \'set -gx PATH $PATH {os.getcwd()}/fluffy\' >> ~/.config/fish/config.fish')
-    else:
-        print("Shell not supported.")
-
     os.system('chmod +x fluffy/fluffy')
+    
+    print("✅ Fluffy has been installed!")
 
 def run_fluffy_background():
-    for proc in psutil.process_iter(['name']):
-        if 'fluffy' in proc.info['name']:
-            print("Fluffy process already running! 🚀")
-            return
+    try:
+        for proc in psutil.process_iter(['name']):
+            if 'fluffy' in proc.info['name']:
+                print("🚀 Fluffy process already running!")
+                return
 
-    process = subprocess.Popen(['./fluffy/fluffy'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    
-    with open(FLUFFY_PID_FILE, 'w') as pid_file:
-        pid_file.write(str(process.pid))
+        process = subprocess.Popen(['./fluffy/fluffy'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
+        with open(FLUFFY_PID_FILE, 'w') as pid_file:
+            pid_file.write(str(process.pid))
 
-    print("🚀 Fluffy is running in the background!")
+        print("🚀 Fluffy is running in the background!")
+    except Exception as e:
+        print(f"An error occurred while starting Fluffy: {e}")
 
 def kill_process():
     if os.path.exists(FLUFFY_PID_FILE):
@@ -114,7 +102,7 @@ def kill_process():
         os.remove(FLUFFY_PID_FILE)
         print("🛑 Fluffy process terminated.")
     else:
-        print("Fluffy process is not running.")
+        print("⚠️ Fluffy process is not running.")
 
 def update_fluffy():
     latest_version = get_latest_version()
