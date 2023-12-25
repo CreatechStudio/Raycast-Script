@@ -3,7 +3,7 @@
 # Required parameters:
 # @raycast.schemaVersion 1
 # @raycast.title Base Converter
-# @raycast.mode silent
+# @raycast.mode compact
 # @raycast.packageName base-converter
 
 # Optional parameters:
