@@ -110,6 +110,7 @@ def update_fluffy():
         saved_version = read_version_from_file()
         if latest_version != saved_version:
             os.system(f'wget -O fluffy/fluffy https://github.com/iewnfod/fluffy/releases/latest/download/fluffy')
+            save_version_to_file(latest_version)
         else:
             print("🤔 Fluffy is already up to date.")
 
