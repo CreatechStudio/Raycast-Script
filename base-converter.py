@@ -3,8 +3,8 @@
 # Required parameters:
 # @raycast.schemaVersion 1
 # @raycast.title Base Converter
-# @raycast.mode silent
-# @raycast.packageName base-converter
+# @raycast.mode compact
+# @raycast.packageName com.createchstudio.raycast.base-converter
 
 # Optional parameters:
 # @raycast.icon ♻️

@@ -4,7 +4,7 @@
 # @raycast.schemaVersion 1
 # @raycast.title Get Bundle ID
 # @raycast.mode inline
-# @raycast.packageName get-bundle-id
+# @raycast.packageName com.createchstudio.raycast.get-bundle-id
 # @raycast.refreshTime 3s
 
 # Optional parameters:
