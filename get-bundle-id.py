@@ -15,7 +15,8 @@
 
 # 安装依赖
 import importlib
-import pip
+import os
+import subprocess
 depends = [
     ('requests', 'requests'),
     ('pyperclip', 'PaperClip')
@@ -24,13 +25,11 @@ for pack_name, imp_name in depends:
     try:
         importlib.import_module(imp_name)
     except:
-        pip.main(['install', pack_name])
+        subprocess.run(f'/usr/bin/env python3 -m pip install {pack_name}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 
 import requests
 import re
-import subprocess
-import sys
 import pyperclip
 
 
