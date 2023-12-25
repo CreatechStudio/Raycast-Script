@@ -11,7 +11,7 @@
 # Optional parameters:
 # @raycast.icon images/bartender-icon.png
 # @raycast.argument1 { "type": "text", "placeholder": "Menu Bar Item Name" }
-# @raycast.packageName Bartender.app
+# @raycast.packageName com.createchstudio.raycast.bartender-search
 
 # Documentation:
 # @raycast.description Perform a quick search of Menu Bar Items, in Bartender 4

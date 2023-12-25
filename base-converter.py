@@ -4,7 +4,7 @@
 # @raycast.schemaVersion 1
 # @raycast.title Base Converter
 # @raycast.mode compact
-# @raycast.packageName base-converter
+# @raycast.packageName com.createchstudio.raycast.base-converter
 
 # Optional parameters:
 # @raycast.icon ♻️
