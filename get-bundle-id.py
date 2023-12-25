@@ -15,7 +15,6 @@
 
 # 安装依赖
 import importlib
-import os
 import subprocess
 depends = [
     ('requests', 'requests'),
@@ -25,7 +24,8 @@ for pack_name, imp_name in depends:
     try:
         importlib.import_module(imp_name)
     except:
-        subprocess.run(f'/usr/bin/env python3 -m pip install {pack_name}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, wait=True)
+        p = subprocess.Popen(f'/usr/bin/env python3 -m pip install {pack_name}', stdout=subprocess.PIPE, shell=True)
+        p.wait()
 
 
 import requests
